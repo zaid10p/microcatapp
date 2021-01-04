@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Link } from "react-router-dom";
+import { Router, Route, Link,Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import { Provider } from 'react-redux';
@@ -32,10 +32,14 @@ function App({ history = defaultHistory }) {
     <Provider store={store}>
      
       <Router history={history}>
+      <Switch>
+          <Route exact path="/cat/" component={RandomCat} />
+        <Route exact path="/cat/test1" component={Test1} />
+        <Route exact path="/cat/test2" component={Test2} />
+      </Switch>
         {/* <button onClick={() => history.push("/test1")}>click </button> */}
-        <Route exact path="/" component={RandomCat} />
-        <Route exact path="/test1" component={Test1} />
-        <Route exact path="/test2" component={Test2} />
+        
+
         {/* <Route exact path="/cat/:greeting" component={GreetingCat} /> */}
       </Router>
      </Provider>

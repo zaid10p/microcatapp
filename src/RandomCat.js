@@ -16,7 +16,7 @@ export default function RandomCat() {
     if (randomCatImg === null) {
       fetchRandomCat();
     }
-  });
+  },[]);
 
   return (
     <div>
